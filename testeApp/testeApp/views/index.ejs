@@ -5,7 +5,31 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <header class="bg-dark">
+      <div class="col-100">
+        <h1 class="color-white"><%= title %></h1>
+      </div>
+    </header>
+    <section>
+      <div class="col-30 bo-grey">
+        <form action="/add" method="post">
+          <legend>Incluir nova tarefa</legend>
+          <input type="text" name="title" placeholder="Insira um titulo">
+          <textarea name="description" id="" cols="30" rows="10" placeholder="Insira uma descrição"></textarea>
+          <button type="submit"> + ADD</button>
+      </form>
+    </div>
+      <div class="col-70">
+        <table>
+          <tbody>
+            <tr>
+              <td>#1 <strong>Terminar PDI</strong></td>
+              <td class="actions"><a href="" class="color-red">Not Ok</a></td>
+              <td class="highlight">Teste</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
   </body>
 </html>

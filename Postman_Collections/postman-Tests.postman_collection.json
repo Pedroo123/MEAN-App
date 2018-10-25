@@ -1,0 +1,38 @@
+{
+	"info": {
+		"_postman_id": "992af8bf-d2d0-4d35-b32c-a0a45c41998c",
+		"name": "postman-Tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Adicionando dados na API",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\": \"teste 3\",\n\t\"description\": \"Teste postman 1\",\n\t\"status\": true\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/add",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"add"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

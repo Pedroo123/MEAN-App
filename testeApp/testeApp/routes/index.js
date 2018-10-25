@@ -7,12 +7,13 @@ router.get('/', function(req, res, next) {
 
   model.find(null, function(err, tasks){
     if(err) {
-      throw err;
-    }
+    throw err;
+  }
     res.render('index', { title: 'Express', tasks: tasks});
   });
 });
 
+//Rota metodo Post
 router.post('/add', function(req, res, next){
     var body = req.body;
     body.status = false;
@@ -21,7 +22,17 @@ router.post('/add', function(req, res, next){
         throw err;
       }
       res.redirect('/');
-    });
-});
+    })
+})
 
+//Rota para GET
+router.get('/mostrar/all', function(req, res) {
+  model.find(task: req.body, function(err, task){
+    if (err) {
+      req.send(err)
+    } else {
+      req.send(task)
+    }
+  })
+})
 module.exports = router;

@@ -27,11 +27,11 @@ router.post('/add', function(req, res, next){
 
 //Rota para GET
 router.get('/mostrar/all', function(req, res) {
-  model.find(task: req.body, function(err, task){
+  tasks.find({tasks: tasks}, function(err, tasks){
     if (err) {
-      req.send(err)
+      throw (err)
     } else {
-      req.send(task)
+      console.log(tasks);
     }
   })
 })

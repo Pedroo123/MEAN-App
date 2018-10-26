@@ -27,12 +27,20 @@ router.post('/add', function(req, res, next){
 
 //Rota para GET
 router.get('/mostrar/all', function(req, res) {
-  tasks.find({tasks: tasks}, function(err, tasks){
+  model.find(tasks, function(err, task){
     if (err) {
       throw (err)
     } else {
-      console.log(tasks);
+      console.log(task);
     }
   })
 })
+
+
+//Rota para GET
+//router.get('/mostrar/all', (req, res) => ) {
+  //db.collection('tasks').find().toArray((err, results) => {
+    //console.log(results);
+//  })
+//})
 module.exports = router;

@@ -1,12 +1,22 @@
-module.exports = function() {
-  var db = require('./../libs/connect_db')();
-  var Schema = require('mongoose').Schema;
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+var db = require('./../libs/connect_db')();
 
-  var task = Schema({
-    title: String,
-    description: String,
-    status: Boolean
-  });
+//Criando um Schema e Model de "Tasks"
+const TasksSchema = new Schema ({
 
-  return db.model('tasks', task);
-}
+  title: {
+    type: String
+  },
+  description: {
+    type: String
+  },
+  status: {
+    type: Boolean
+  }
+
+});
+
+const Tasks = mongoose.model('tasks', TasksSchema);
+
+module.exports = Tasks;

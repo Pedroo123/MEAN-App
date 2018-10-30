@@ -1,22 +1,11 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
-var db = require('./../libs/connect_db')();
+var mongoose = require('mongoose');
 
-//Criando um Schema e Model de "Tasks"
-const TasksSchema = new Schema ({
+var Schema = mongoose.Schema;
 
-  title: {
-    type: String
-  },
-  description: {
-    type: String
-  },
-  status: {
-    type: Boolean
-  }
+var tasks = new Schema({
+  title: String,
+  description: String,
+  status: Boolean
+})
 
-});
-
-const Tasks = mongoose.model('tasks', TasksSchema);
-
-module.exports = Tasks;
+var taskModel = mongoose.model('taskModel', tasks);

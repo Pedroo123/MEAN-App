@@ -23,7 +23,7 @@ app.use(bodyParser.json());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/mostrar/all', indexRouter);
+app.use('/tasks/add', indexRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

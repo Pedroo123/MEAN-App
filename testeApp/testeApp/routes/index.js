@@ -1,28 +1,23 @@
 var express = require('express');
 var router = express.Router();
-var tasks = require('../model/tasks');
+var taskModel = require('../model/tasks');
 
 //Rota Metodo Get
 router.get('/tasks', function(req, res, next) {
-  model.find({}).then(function(tasks){
+  tasks.find({}).then(function(tasks){
     res.send(tasks);
   });
 });
 
-//Rota metodo PUT
-router.put('/tasks/:id', function(req, res, next){
-  module.findByIdAndUpdate({_id: req.params.id}, req.body).then(function(){
-    modules.findOne({_id: req.params.id}).then(function(task){
-      res.send(task);
-    });
-  });
-});
+router.post('/tasks/add', function(req, res, next) {
+  var taskModel = new taskModel(req.body);
+  task.create()
+  .then(task => {
+    res.json("Task criada com sucesso!")
+  })
+  .catch(err => {
+    res.status(400).send("Nao foi possivel salvar")
+  })
+})
 
-
-//Rota metodo POST
-router.post('/tasks', function(req, res){
-  tasks.create(req.body).then(function(task) {
-    res.send(task);
-  });
-});
 module.exports = router;

@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var taskModel = require('../model/tasks');
+var tasks = require('../model/tasks');
 
 //Rota Metodo Get
 router.get('/tasks', function(req, res, next) {

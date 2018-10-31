@@ -1,12 +1,16 @@
 var express = require('express');
 var router = express.Router();
-var tasks = require('../model/tasks');
+const Task = require('../model/tasks');
+const db = require('../libs/connect_db');
 
 //Rota Metodo Get
-router.get('/tasks', function(req, res, next) {
-  tasks.find({}).then(function(tasks){
-    res.send(tasks);
-  });
+router.get('/tasks', function(req, res) {
+  Task.find(function(err, tasks) {
+    if(err) {
+      res.send(err)
+    }
+    res.json(tasks);
+  })
 });
 
 //Rota POST

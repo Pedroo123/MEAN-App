@@ -13,22 +13,75 @@
 					{
 						"key": "Content-Type",
 						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\": \"teste\",\n\t\"description\": \"teste postman 7\",\n\t\"status\": true\n}"
+				},
+				"url": {
+					"raw": "localhost:3001/tasks/add",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"tasks",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retornando dados na API",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3001/tasks",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Alterando dados na API",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
 						"value": "application/json",
 						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"title\": \"teste 3\",\n\t\"description\": \"Teste postman 1\",\n\t\"status\": true\n}"
+					"raw": "{\n\t\"title\": \"Teste put\",\n\t\"description\": \"teste put description\",\n\t\"status\": true\n}"
 				},
 				"url": {
-					"raw": "localhost:3000/add",
+					"raw": "localhost:3001/tasks/5bcfa24cd5ffb112909ed92",
 					"host": [
 						"localhost"
 					],
-					"port": "3000",
+					"port": "3001",
 					"path": [
-						"add"
+						"tasks",
+						"5bcfa24cd5ffb112909ed92"
 					]
 				}
 			},

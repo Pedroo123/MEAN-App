@@ -15,10 +15,10 @@ router.get('/tasks', function(req, res) {
 
 //Rota POST
 router.post('/tasks/add', function(req, res, next) {
-  var task = new tasks(req.body);
-  task.create()
+  var task = new Task(req.body);
+  task.save()
   .then(task => {
-    res.json("Task criada com sucesso!")
+    res.status(201).json(task)
   })
   .catch(err => {
     res.status(400).send("Nao foi possivel salvar")
@@ -27,8 +27,8 @@ router.post('/tasks/add', function(req, res, next) {
 
 //Rota metodo PUT
 router.put('/tasks/:id', function(req, res, next){
-  module.findByIdAndUpdate({_id: req.params.id}, req.body).then(function(){
-    tasks.findOne({_id: req.params.id}).then(function(task){
+  Task.findByIdAndUpdate({_id: req.params.id}, req.body).then(function(){
+    Task.findOne({_id: req.params.id}).then(function(task){
       res.send(task);
     });
   });
